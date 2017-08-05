@@ -15,7 +15,7 @@ Picture a list of transactions digitally recorded and any of the transaction ref
 
 **That chain of transactions is an eletronic coin.** Why?
 
-1. Because people perceive there is value in being the current (last) owner. [1]: http://below.com
+1. [Because people perceive there is value in being the current (last) owner.][1]
 2. Someone can 'prove' that he is the owner of the electronic coin. (we will briefly discuss how the proof is provided later).
 3. There is a mechanism to transfer that electronic coin to someone else.
 
@@ -42,5 +42,5 @@ The obvious major problem that Satoshi needs to address is the fact that the own
 > _Thought experiment_:
 > Without getting into to much of the excitement around the application of Satoshi's idea, but to give you sense of how powerful the concept is, try to change the words "electronic coin" with "digital asset" in this essay. Electronic coin limits the imagination to the cash metaphore, but digital asset can take us in a lot of different places.
 
-[1] Being the current owner of a coin use to be priced at a few cents in 2010 to over $1000 in 2017.  
+[1] Being the current owner of a coin use to be priced at a few cents in 2010 to over $2000 in early August 2017.  
 [2] USD is not backed by gold since 1971.
