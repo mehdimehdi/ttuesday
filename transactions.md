@@ -1,6 +1,6 @@
 # Electronic peer-to-peer transactions
 
-> Let me make clear that I'm not trying to explain or define bitcoin in this piece. This is not a complete and exhaustive guide to understand bitcoin or cryto-currencies. I like to study in small concrete pieces before I can hope to fundamentally understand the whole picture. This just describes the electronic peer-to-peer transaction part of bitcoin. It's missing a lot of important parts that makes everyone excited. I consider that if you don't truly understand the peer-to-peer transaction piece, the whole picture will always look off.
+> Let me make clear that I'm not trying to explain or define bitcoin in this piece. This is not a complete and exhaustive guide to understand bitcoin or cryto-currencies. I [like to study in small concrete pieces](https://something.com) before I can hope to fundamentally understand the whole picture. This piece just describes the electronic peer-to-peer transaction part of bitcoin. It's missing a lot of important parts that makes everyone excited. I consider that if you don't truly understand the peer-to-peer transaction piece, the whole picture will always look off.
 
 Let's look at how a person-to-person transaction works in the real world. There is cash. Someone has that cash in their possession. They can decide to hand it over to someone else for exchange of goods or services.
 
@@ -42,5 +42,5 @@ The obvious major problem that Satoshi needs to address is the fact that the own
 > _Thought experiment_:
 > Without getting into to much of the excitement around the application of Satoshi's idea, but to give you sense of how powerful the concept is, try to change the words "electronic coin" with "digital asset" in this essay. Electronic coin limits the imagination to the cash metaphore, but digital asset can take us in a lot of different places.
 
-[1] Being the current owner of a coin use to be priced at a few cents in 2010 to over $1000 in 2017.
-[4] USD is not backed by gold since 1971.
+[1] Being the current owner of a coin use to be priced at a few cents in 2010 to over $1000 in 2017.  
+[2] USD is not backed by gold since 1971.
