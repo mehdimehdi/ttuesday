@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.5.1">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2017-08-05T21:40:12-07:00</updated><id>http://localhost:4000/</id><title type="html">Crypto t-tuesday</title><subtitle>Mehdi Ait Oufkir discussing out crypto currency, crypto assets and bitcoin for his own good.
+</subtitle><entry><title type="html">Electronic peer-to-peer transactions</title><link href="http://localhost:4000/2017/08/05/transactions.html" rel="alternate" type="text/html" title="Electronic peer-to-peer transactions" /><published>2017-08-05T21:05:41-07:00</published><updated>2017-08-05T21:05:41-07:00</updated><id>http://localhost:4000/2017/08/05/transactions</id><content type="html" xml:base="http://localhost:4000/2017/08/05/transactions.html">&lt;h1 id=&quot;electronic-peer-to-peer-transactions&quot;&gt;Electronic peer-to-peer transactions&lt;/h1&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Let me make clear that I’m not trying to explain or define bitcoin in this piece. This is not a complete and exhaustive guide to understand bitcoin or cryto-currencies. I &lt;a href=&quot;/about&quot;&gt;like to study in small concrete pieces&lt;/a&gt; before I can hope to fundamentally understand the whole picture. This piece just describes the electronic peer-to-peer transaction part of bitcoin. It’s missing a lot of important parts that makes everyone excited. I consider that if you don’t truly understand the peer-to-peer transaction piece, the whole picture will always look off.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;Let’s look at how a person-to-person transaction works in the real world. There is cash. Someone has that cash in their possession. They can decide to hand it over to someone else for exchange of goods or services.&lt;/p&gt;
+
+&lt;p&gt;To put in the most simple way, there are three properties:&lt;/p&gt;
+&lt;ol&gt;
+  &lt;li&gt;The cash has a perceived value shared by both parties. (let’s not worry about the notion of value for the purpose of this discussion)&lt;/li&gt;
+  &lt;li&gt;Someone can prove it owns the cash, by the sole fact that the cash is in their possession. (Let’s not worry about stolen cash, and counterfeit)&lt;/li&gt;
+  &lt;li&gt;There is an easy way to transfer the cash to someone else.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;In order to accomplish this in the electronic world, Satoshi Nakamoto has a few tricks:&lt;/p&gt;
+
+&lt;p&gt;Picture a list of transactions digitally recorded and any of the transaction referencing the previous one (a chain of transactions). A transaction contains information about to the owner, a reference to the previous transaction (that’s the link in the chain), and the proof that the previous owner has aggreed to do the transaction. When a new transaction is added, it references back to the previous transaction.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;That chain of transactions is an eletronic coin.&lt;/strong&gt; Why?&lt;/p&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;Because people perceive there is value in being the current (last) owner. [1]&lt;/li&gt;
+  &lt;li&gt;Someone can ‘prove’ that he is the owner of the electronic coin. (we will briefly discuss how the proof is provided later).&lt;/li&gt;
+  &lt;li&gt;There is a mechanism to transfer that electronic coin to someone else.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The leap of faith of believing that the chain of transactions is actual electronic cash is the hardest part. It feels fake, intangible, but at the end of the day, what makes you think that a piece of paper with a number and “in god we trust” printed on it is actually cash? Because people around you also assign value to it.[2]&lt;/p&gt;
+
+&lt;p&gt;The concept is the same for electronic cash.&lt;/p&gt;
+
+&lt;p&gt;Satoshi wants us to use cryptogaphy to ‘prove’ ownership. An owner signs the transaction and adds the signature to a transaction when transfering ownership. In very short, “signing” is a mathematical method to create a list of characters that demonstrate the authenticity of any digital message or document; in our case the transaction.&lt;/p&gt;
+
+&lt;p&gt;Here is how a transaction works:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;Owner #1 is the current owner of the electronic coin.&lt;/li&gt;
+  &lt;li&gt;Owner #1 decides to transact and transfer the electronic coin to owner #2.&lt;/li&gt;
+  &lt;li&gt;Owner #1 gets a public identifier of owner #2, a reference to the previous transaction (that basically describes how he became the current owner), and its own digital signature.&lt;/li&gt;
+  &lt;li&gt;A new transaction is created with all of that information.&lt;/li&gt;
+  &lt;li&gt;Owner #2 can verify that the signature is correct and is now the owner of the electronic coin.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;If a malicious person claimed to be the owner of the coin, let’s call him owner X. And he tries to transact, then owner #2 can look at the signatures in the chain of transactions and see if it all looks proper. If Owner X created the coin out of thin air, somewhere in the chain the signature will not match its respective owner.&lt;/p&gt;
+
+&lt;p&gt;With this method we can now prove ownership of electronic coin, transfer this coin. And no-one can fake ownership of the electronic coin.&lt;/p&gt;
+
+&lt;p&gt;The obvious major problem that Satoshi needs to address is the fact that the owner of the electronic coin can send multiple time the same electronic coin without being caught (the signature will be right). That’s called “double spending”, and that’s the main reason why banks play a role in our current system. Satoshi has a solution against this, and I’ll cover this later, once I spend more time discussing the digital signature process in more details.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;Thought experiment&lt;/em&gt;:
+Without getting into to much of the excitement around the application of Satoshi’s idea, but to give you sense of how powerful the concept is, try to change the words “electronic coin” with “digital asset” in this essay. Electronic coin limits the imagination to the cash metaphore, but digital asset can take us in a lot of different places.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;[1] Being the current owner of a coin use to be priced at a few cents in 2010 to over $3000 in early August 2017.&lt;br /&gt;
+[2] USD is not backed by gold since 1971.&lt;/p&gt;</content><author><name></name></author><summary type="html">Electronic peer-to-peer transactions</summary></entry></feed>

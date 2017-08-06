@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Electronic peer-to-peer transactions</title>
+  <meta name="description" content="Electronic peer-to-peer transactions">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2017/08/05/transactions.html">
+  <link rel="alternate" type="application/rss+xml" title="Crypto t-tuesday" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Crypto t-tuesday</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Electronic peer-to-peer transactions</h1>
+    <p class="post-meta">
+      <time datetime="2017-08-05T21:05:41-07:00" itemprop="datePublished">
+        
+        Aug 5, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <h1 id="electronic-peer-to-peer-transactions">Electronic peer-to-peer transactions</h1>
+
+<blockquote>
+  <p>Let me make clear that I’m not trying to explain or define bitcoin in this piece. This is not a complete and exhaustive guide to understand bitcoin or cryto-currencies. I <a href="/about">like to study in small concrete pieces</a> before I can hope to fundamentally understand the whole picture. This piece just describes the electronic peer-to-peer transaction part of bitcoin. It’s missing a lot of important parts that makes everyone excited. I consider that if you don’t truly understand the peer-to-peer transaction piece, the whole picture will always look off.</p>
+</blockquote>
+
+<p>Let’s look at how a person-to-person transaction works in the real world. There is cash. Someone has that cash in their possession. They can decide to hand it over to someone else for exchange of goods or services.</p>
+
+<p>To put in the most simple way, there are three properties:</p>
+<ol>
+  <li>The cash has a perceived value shared by both parties. (let’s not worry about the notion of value for the purpose of this discussion)</li>
+  <li>Someone can prove it owns the cash, by the sole fact that the cash is in their possession. (Let’s not worry about stolen cash, and counterfeit)</li>
+  <li>There is an easy way to transfer the cash to someone else.</li>
+</ol>
+
+<p>In order to accomplish this in the electronic world, Satoshi Nakamoto has a few tricks:</p>
+
+<p>Picture a list of transactions digitally recorded and any of the transaction referencing the previous one (a chain of transactions). A transaction contains information about to the owner, a reference to the previous transaction (that’s the link in the chain), and the proof that the previous owner has aggreed to do the transaction. When a new transaction is added, it references back to the previous transaction.</p>
+
+<p><strong>That chain of transactions is an eletronic coin.</strong> Why?</p>
+
+<ol>
+  <li>Because people perceive there is value in being the current (last) owner. [1]</li>
+  <li>Someone can ‘prove’ that he is the owner of the electronic coin. (we will briefly discuss how the proof is provided later).</li>
+  <li>There is a mechanism to transfer that electronic coin to someone else.</li>
+</ol>
+
+<p>The leap of faith of believing that the chain of transactions is actual electronic cash is the hardest part. It feels fake, intangible, but at the end of the day, what makes you think that a piece of paper with a number and “in god we trust” printed on it is actually cash? Because people around you also assign value to it.[2]</p>
+
+<p>The concept is the same for electronic cash.</p>
+
+<p>Satoshi wants us to use cryptogaphy to ‘prove’ ownership. An owner signs the transaction and adds the signature to a transaction when transfering ownership. In very short, “signing” is a mathematical method to create a list of characters that demonstrate the authenticity of any digital message or document; in our case the transaction.</p>
+
+<p>Here is how a transaction works:</p>
+
+<ul>
+  <li>Owner #1 is the current owner of the electronic coin.</li>
+  <li>Owner #1 decides to transact and transfer the electronic coin to owner #2.</li>
+  <li>Owner #1 gets a public identifier of owner #2, a reference to the previous transaction (that basically describes how he became the current owner), and its own digital signature.</li>
+  <li>A new transaction is created with all of that information.</li>
+  <li>Owner #2 can verify that the signature is correct and is now the owner of the electronic coin.</li>
+</ul>
+
+<p>If a malicious person claimed to be the owner of the coin, let’s call him owner X. And he tries to transact, then owner #2 can look at the signatures in the chain of transactions and see if it all looks proper. If Owner X created the coin out of thin air, somewhere in the chain the signature will not match its respective owner.</p>
+
+<p>With this method we can now prove ownership of electronic coin, transfer this coin. And no-one can fake ownership of the electronic coin.</p>
+
+<p>The obvious major problem that Satoshi needs to address is the fact that the owner of the electronic coin can send multiple time the same electronic coin without being caught (the signature will be right). That’s called “double spending”, and that’s the main reason why banks play a role in our current system. Satoshi has a solution against this, and I’ll cover this later, once I spend more time discussing the digital signature process in more details.</p>
+
+<blockquote>
+  <p><em>Thought experiment</em>:
+Without getting into to much of the excitement around the application of Satoshi’s idea, but to give you sense of how powerful the concept is, try to change the words “electronic coin” with “digital asset” in this essay. Electronic coin limits the imagination to the cash metaphore, but digital asset can take us in a lot of different places.</p>
+</blockquote>
+
+<p>[1] Being the current owner of a coin use to be priced at a few cents in 2010 to over $3000 in early August 2017.<br />
+[2] USD is not backed by gold since 1971.</p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Crypto t-tuesday</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Crypto t-tuesday
+            
+            </li>
+            
+            <li><a href="mailto:mehdi.aitoufkir@gmail.com">mehdi.aitoufkir@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+          <li>
+            <a href="https://twitter.com/mehdiaitoufkir"><span class="icon icon--twitter"><svg viewBox="0 0 16 16" width="16px" height="16px"><path fill="#828282" d="M15.969,3.058c-0.586,0.26-1.217,0.436-1.878,0.515c0.675-0.405,1.194-1.045,1.438-1.809c-0.632,0.375-1.332,0.647-2.076,0.793c-0.596-0.636-1.446-1.033-2.387-1.033c-1.806,0-3.27,1.464-3.27,3.27 c0,0.256,0.029,0.506,0.085,0.745C5.163,5.404,2.753,4.102,1.14,2.124C0.859,2.607,0.698,3.168,0.698,3.767 c0,1.134,0.577,2.135,1.455,2.722C1.616,6.472,1.112,6.325,0.671,6.08c0,0.014,0,0.027,0,0.041c0,1.584,1.127,2.906,2.623,3.206 C3.02,9.402,2.731,9.442,2.433,9.442c-0.211,0-0.416-0.021-0.615-0.059c0.416,1.299,1.624,2.245,3.055,2.271 c-1.119,0.877-2.529,1.4-4.061,1.4c-0.264,0-0.524-0.015-0.78-0.046c1.447,0.928,3.166,1.469,5.013,1.469 c6.015,0,9.304-4.983,9.304-9.304c0-0.142-0.003-0.283-0.009-0.423C14.976,4.29,15.531,3.714,15.969,3.058z"/></svg>
+</span><span class="username">mehdiaitoufkir</span></a>
+
+          </li>
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Mehdi Ait Oufkir discussing out crypto currency, crypto assets and bitcoin for his own good.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
