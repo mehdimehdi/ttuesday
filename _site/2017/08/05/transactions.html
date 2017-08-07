@@ -89,13 +89,13 @@
 <p>To put in the most simple way, there are three properties:</p>
 <ol>
   <li>The cash has a perceived value shared by both parties. (let’s not worry about the notion of value for the purpose of this discussion)</li>
-  <li>Someone can prove it owns the cash, by the sole fact that the cash is in their possession. (Let’s not worry about stolen cash, and counterfeit)</li>
+  <li>Someone can prove it owns the cash, by the sole fact that the cash is in their possession. (Let’s not worry about stolen cash, or counterfeit)</li>
   <li>There is an easy way to transfer the cash to someone else.</li>
 </ol>
 
 <p>In order to accomplish this in the electronic world, Satoshi Nakamoto has a few tricks:</p>
 
-<p>Picture a list of transactions digitally recorded and any of the transaction referencing the previous one (a chain of transactions). A transaction contains information about to the owner, a reference to the previous transaction (that’s the link in the chain), and the proof that the previous owner has aggreed to do the transaction. When a new transaction is added, it references back to the previous transaction.</p>
+<p>Picture a list of transactions digitally recorded. Every transaction references the previous one (it’s a chain of transactions). A transaction contains information about to the owner (the recipient of the transaction), a reference to the previous transaction (that’s the link in the chain), and the proof that the previous owner has aggreed to do the transaction. When a new transaction is added, it references back to the previous transaction.</p>
 
 <p><strong>That chain of transactions is an eletronic coin.</strong> Why?</p>
 
@@ -105,7 +105,7 @@
   <li>There is a mechanism to transfer that electronic coin to someone else.</li>
 </ol>
 
-<p>The leap of faith of believing that the chain of transactions is actual electronic cash is the hardest part. It feels fake, intangible, but at the end of the day, what makes you think that a piece of paper with a number and “in god we trust” printed on it is actually cash? Because people around you also assign value to it.[2]</p>
+<p>The leap of faith of believing that the chain of transactions is actual electronic cash is the hardest part. It feels fake, intangible, but at the end of the day, what makes you think that a piece of paper with “in god we trust” printed on it is actually cash? Because people around you also assign value to it.[2]</p>
 
 <p>The concept is the same for electronic cash.</p>
 
@@ -116,7 +116,7 @@
 <ul>
   <li>Owner #1 is the current owner of the electronic coin.</li>
   <li>Owner #1 decides to transact and transfer the electronic coin to owner #2.</li>
-  <li>Owner #1 gets a public identifier of owner #2, a reference to the previous transaction (that basically describes how he became the current owner), and its own digital signature.</li>
+  <li>Owner #1 gets a public identifier of owner #2, a reference to the previous transaction (that describes how he became the current owner), and its own digital signature.</li>
   <li>A new transaction is created with all of that information.</li>
   <li>Owner #2 can verify that the signature is correct and is now the owner of the electronic coin.</li>
 </ul>
@@ -125,11 +125,11 @@
 
 <p>With this method we can now prove ownership of electronic coin, transfer this coin. And no-one can fake ownership of the electronic coin.</p>
 
-<p>The obvious major problem that Satoshi needs to address is the fact that the owner of the electronic coin can send multiple time the same electronic coin without being caught (the signature will be right). That’s called “double spending”, and that’s the main reason why banks play a role in our current system. Satoshi has a solution against this, and I’ll cover this later, once I spend more time discussing the digital signature process in more details.</p>
+<p>The obvious major problem that Satoshi needs to address is the fact that the owner of the electronic coin can send multiple time the same electronic coin without being caught. That’s called “double spending”, and that’s the main reason why banks play a role in our current system. Satoshi has a solution for this, and I’ll cover this later, once I spend more time discussing the digital signature process in more details.</p>
 
 <blockquote>
   <p><em>Thought experiment</em>:
-Without getting into to much of the excitement around the application of Satoshi’s idea, but to give you sense of how powerful the concept is, try to change the words “electronic coin” with “digital asset” in this essay. Electronic coin limits the imagination to the cash metaphore, but digital asset can take us in a lot of different places.</p>
+Without getting too utopian about the application of Satoshi’s idea, but to give you sense of how powerful the concept is, try to change the words “electronic coin” with “digital asset” in this essay. Electronic coin limits the imagination to the cash metaphore, but digital asset can take us in a lot of different places.</p>
 </blockquote>
 
 <p>[1] Being the current owner of a coin use to be priced at a few cents in 2010 to over $3000 in early August 2017.<br />
