@@ -45,5 +45,8 @@ The obvious major problem that Satoshi needs to address is the fact that the own
 > _Thought experiment_:
 > Without getting too utopian about the application of Satoshi's idea, but to give you sense of how powerful the concept is, try to change the words "electronic coin" with "digital asset" in this essay. Electronic coin limits the imagination to the cash metaphore, but digital asset can take us in a lot of different places.
 
+
+Thanks to [Mohit](https://twitter.com/mohitmamoria) and [Stan](https://twitter.com/spolu) for review drafts of this.
+
 [1] Being the current owner of a coin use to be priced at a few cents in 2010 to over $3000 in early August 2017.  
 [2] USD is not backed by gold since 1971.
