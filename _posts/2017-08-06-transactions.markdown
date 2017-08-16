@@ -3,7 +3,7 @@ layout: post
 title:  "Electronic peer-to-peer transactions"
 date:   2017-08-05 21:05:41 -0700
 ---
-> I'm not trying to explain or define bitcoin in this piece. I [like to study in small concrete pieces](/about) in order to understand the whole picture. This piece just describes the electronic peer-to-peer transaction part of bitcoin. It's missing important and innovative parts. If one doesn't truly understand the peer-to-peer transaction piece, the whole picture will always look off. No matter how much time you spend on the innovative part of bitcoin.
+> I'm not trying to explain or define bitcoin in this piece. I [like to study in small concrete pieces](/about) of a bigger concept in order to understand the whole picture. In this article I'm diving into the electronic peer-to-peer transaction piece of bitcoin. It's missing important and innovative parts. If one doesn't truly understand the peer-to-peer transaction piece, the whole picture will always look off. No matter how much time you spend on the innovative part of bitcoin.
 
 Let's look at how a person-to-person transaction works in the real world. There is cash. Someone has that cash in their possession. They can decide to hand it over to someone else for exchange of goods or services.
 
