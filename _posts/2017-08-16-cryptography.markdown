@@ -6,11 +6,11 @@ date:   2017-08-16 18:00:00 -0700
 
 In order to build a peer-to-peer electronic cash system, we can't rely on a central trusted third party (It wouldn't really be peer-to-peer otherwise). One of the major service[1] a central trusted third party provides is to verify identities when one wants to transact.
 
-Let's take the example of Venmo. Venmo is a central trusted third-party. If Laura sends money to Raymond through the Venmo application. Venmo handles the identification and authentication (phone number + password, email + password or Touch ID, etc.). Venmo validates the identities of Laura (to send the money) and Raymond (to receive the money).
+Let's take the example of Venmo. Venmo is a central trusted third-party. If Laurie sends money to Raymond through the Venmo application. Venmo handles the identification and authentication (phone number + password, email + password or Touch ID, etc.). Venmo validates the identities of Laurie (to send the money) and Raymond (to receive the money).
 
 In [Nakamoto](https://en.wikipedia.org/wiki/Satoshi_Nakamoto)'s quest to build an eletronic peer-to-peer cash system, he hoped to avoid by-pass a trusted third-party.[2]
 
-Without a trusted third-party, we are be forced to trust no-one. We still want to transact though. So here is the trick: we make all the transactions available to everyone: completely public. Anyone interested in looking at the electronic transactions can look at them, copy them. Everyone knows who's buying from who (transacting). Think about publishing the list of transactions on a website available to anyone with an internet connection.
+Without a trusted third-party, we are be forced to trust no-one. We still want to transact though. So here is the trick: we make all the transactions available to everyone: completely public. Anyone interested in looking at the electronic transactions can look at them, copy them. Everyone knows who's buying from who (transacting). The person who's initiating the transaction makes the transaction public to anyone that has an internet connection.
 
 So now, we have a list of transactions (electronic cash) with Raymond's name on it (because he is the last owner). Raymond is the owner of the electronic cash. It has value to Raymond. It probably has value to someone else too. The main problem is: what stops Raymond's nemesis (Abraham), from copying that list of transactions, adding another transaction at the end of the list that claims that he is the new owner? If Abraham does this, and publishes back on the internet, at this point Abraham would have stolen the electronic cash from Raymond! No one would want to use a cash system that could so easily be robbed.
 
