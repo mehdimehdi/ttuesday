@@ -40,7 +40,7 @@ If a malicious person claimed to be the owner of the coin, let's call him owner 
 
 With this method we can now prove ownership of electronic coin, transfer this coin. And no-one can fake ownership of the electronic coin.
 
-The obvious major problem that Satoshi needs to address is the fact that the owner of the electronic coin can send multiple time the same electronic coin without being caught. That's called "double spending", and that's the main reason why banks play a role in our current system. Satoshi has a solution for this, and I'll cover this later, once I spend more time discussing the digital signature process in more details.
+The obvious major problem that Satoshi needs to address is the fact that the owner of the electronic coin can send multiple time the same electronic coin without being caught. That's called [double spending](http://ttuesday.com/2017/08/28/double-spending.html), and that's the main reason why banks play a role in our current system. Satoshi has a solution for this, and I'll cover this later, once I spend more time discussing the digital signature process in more details.
 
 > _Thought experiment_:
 > Without getting too utopian about the application of Satoshi's idea, but to give you sense of how powerful the concept is, try to change the words "electronic coin" with "digital asset" in this essay. Electronic coin limits the imagination to the cash metaphore, but digital asset can take us in a lot of different places.
