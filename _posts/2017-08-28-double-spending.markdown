@@ -24,7 +24,7 @@ Let's say group A has transaction 1, transaction 2, transaction 3 and transactio
 
 Group B has transaction 5, transaction 6, a timestamp (`2017-08-23 23:21:11`) and the hash of group A.
 
-Group C has transaction 7, transaction 8, transaction 9, a timestamp (`2017-08-23 23:31:11`) and a the has of group B.
+Group C has transaction 7, transaction 8, transaction 9, a timestamp (`2017-08-23 23:31:11`) and the hash of group B.
 
 A group of transactions is linked to the previous thanks to the hash of the previous group (which is unique based on the content of the group). In the world of Bitcoin, the groups are called blocks, and the link is call chain. We now have our concept of blockchain.
 
@@ -61,6 +61,6 @@ As designed above, our blocks are fairly simple to compute right now. We can alm
 ```
 
 
-We now have a protocol where everyone is trying to create the last block based on the transaction they received. Since everyone is working in parallel (also since there might be fraudsters), there will be cases when blockchains with different content will appear on the network. We aggree as a group that we need always trust the blockchain that is the longest, and throw away the other chains. And this how we get to decentralize concensus on what the list of full transactions is actually accurate.
+We now have a protocol where everyone is trying to create the last block based on the transaction they received. Since everyone is working in parallel (also since there might be fraudsters), there will be cases when blockchains with different content will appear on the network. We agree as a group that we need always trust the blockchain that is the longest, and throw away the other chains. And this how we get to decentralize concensus on what the list of full transactions is actually accurate.
 
 [1] A [hash function](https://en.wikipedia.org/wiki/Hash_function) is method that maps a arbitrary size data to a fixed size data.
