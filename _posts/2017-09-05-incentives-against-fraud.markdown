@@ -4,14 +4,11 @@ title:  "Incentives against fraud"
 date:   2017-09-05 01:05:41 -0700
 ---
 
-The electronic cash created is valuable only if we solve for double spending. The secured blockchain is the solution to prevent double spending and thus ensure the currency has value. The genius of Nakamoto, is to reward the miners doing all the hardwork of securing the blockchain with the own electronic cash they are helping to secure. It's a self-contained solution.
+The electronic cash created is valuable only if we solve for double spending. The secured blockchain is the solution to prevent double spending and thus ensure the currency has value. The genius of Nakamoto, is to reward the miners doing all the hardwork of securing the blockchain with the same electronic cash they help securing. It's a self-contained solution, it does not add dependencies to any other system.
 
-We now have miner, mining blocks. Mining is cute metaphor (comparison with mining gold) for creating the proof-of-work. And the reason why the "mining" metaphor works so well is because for every block successfully mined, the miner gets rewarded with electronic cash. Instead of needing a central authority to ge rewarded for keeping your bank account secure, anyone in the world with computing power can potentially get rewarded for helping keeping the system secured.
+We now have miners. They are mining blocks. Mining is cute metaphor (comparison with mining gold) for creating the proof-of-work. And the reason why the "mining" metaphor works so well is because for every block successfully mined, the miner gets rewarded with electronic cash. Instead of needing a central authority to get rewarded for keeping your bank account secure, anyone computing power in the world connected to the internet can get rewarded for helping keeping the system secured.
 
-Here is how a miner gets rewarded for having built the proof-of-work. At the top of the block just mined (the `header`) the miner is allowed to create a new digital coin and make himself the owner of that coin:
-
-> This adds an incentive for nodes to support the network, and provides a way to initially distribute coins into circulation, since there is no central authority to issue them
->> Satoshi Nakamoto (Original bitcoin paper)
+At the top of a new block (the `header`) the miner is allowed to create a new digital coin and make himself the owner of that coin.
 
 **How many digital coin should the miner be rewarded?**
 
