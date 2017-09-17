@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Incentives against fraud"
-date:   2017-09-05 01:05:41 -0700
+date:   2017-09-16 01:05:41 -0700
 ---
 
 The electronic cash created is valuable only if we solve for [double spending](/2017/08/28/double-spending.html). The blockchain is the solution to prevent double spending and thus ensure the currency has value. The genius of Nakamoto, is to reward the miners doing all the hardwork of securing the blockchain with the same electronic cash they help securing. It's a self-contained solution, it does not add dependencies to any other systems.
