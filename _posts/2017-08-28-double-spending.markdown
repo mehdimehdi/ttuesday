@@ -4,11 +4,11 @@ title:  "Blockchain against double spending"
 date:   2017-08-28 18:00:00 -0700
 ---
 
-We created [electronic cash out of bits](http://ttuesday.com/2017/08/05/transactions.html) and used [digital signatures](http://ttuesday.com/2017/08/16/cryptography.html) to authenticate recipients of transactions without requiring a central trusted authority. We also know that we have one problem that we haven't solved quite yet: double spending.
+We created [electronic cash out of bits](/2017/08/05/transactions.html) and used [digital signatures](/2017/08/16/cryptography.html) to authenticate recipients of transactions without requiring a central trusted authority. We also know that we have one problem that we haven't solved quite yet: double spending.
 
 **Concrete example of the double spending problem**
  
-Abraham is owner of an [electronic coin](http://ttuesday.com/2017/08/05/transactions.html). Abraham pays Raymond for a random service with that electronic coin -- Abraham makes a copy of the existing list of transactions and marks Raymond as the new owner of the coin. Raymond verifies that it has not been forged (thanks to Abraham's [digital signature](http://ttuesday.com/2017/08/16/cryptography.html)). Raymond is now the proud owner of the electronic coin.  
+Abraham is owner of an [electronic coin](/2017/08/05/transactions.html). Abraham pays Raymond for a random service with that electronic coin -- Abraham makes a copy of the existing list of transactions and marks Raymond as the new owner of the coin. Raymond verifies that it has not been forged (thanks to Abraham's [digital signature](/2017/08/16/cryptography.html)). Raymond is now the proud owner of the electronic coin.  
 
 Abraham decides that he also wants to buy an ebook (from Laurie this time). He no longer owns any coins. He takes the previous copy of the list of transactions (before he marked Raymond as the owner) and marks Laurie as the new owner. Laurie verifies that it has not been forged. Laurie is now the proud owner of the same coin. Problem: Abraham spent the same coin 2 times. That's called double spending, and is makes our currency not viable.
 
@@ -60,7 +60,7 @@ As designed above, our blocks are fairly simple to compute right now. We can alm
     * proof-of-work
 ```
 
-Not everyone is actually asked to create the **proof-of-work**. Those who do are called miners (Analogy to mining gold). And the miner are actually rewarded for doing the work. They are rewarded with the same money that they are actually trying to secure. It's one of the genius of Nakamoto. It's the incentive part of bitcoin.
+Not everyone is actually asked to create the **proof-of-work**. Those who do are called miners (Analogy to mining gold). And the miner are actually rewarded for doing the work. They are rewarded with the same money that they are actually trying to secure. It's one of the genius of Nakamoto. It's the [incentive](/2017/09/16/incentives-against-fraud.html) part of bitcoin.
 
 We now have a protocol where miners are trying to create the last block based on the transaction they received. Since they are working in parallel (also since there might be fraudsters), there will be cases when blockchains with different content will appear on the network. We agree as a group that we need always trust the blockchain that is the longest, and throw away the other chains. And this how we get to decentralize concensus on what the list of full transactions is actually accurate.
 

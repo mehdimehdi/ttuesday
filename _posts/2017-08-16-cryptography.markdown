@@ -39,7 +39,7 @@ There is an easy way (mathematical method) to look at the signature and confirm 
 If you like to think in analogies, here is how you need to think about it: the signature is a wax seal on an envelope. Anyone can open the envelope and look at the content, but the presence of the seal proves that the content was added in the envelope by the sender.
 
 Now what we used to have trusted third parties to help us ensure the identities of everyone involved in a transaction. We applied cryptography to ensure identities wihtout the need of third-parties.
-Third-parties also provide a solution against [double spending](http://ttuesday.com/2017/08/28/double-spending.html) which is important to solve to have usable electronic cash system. Interestingly enough, cryptography also provides a solution to the 'double spending' problem. We will cover it next.
+Third-parties also provide a solution against [double spending](/2017/08/28/double-spending.html) which is important to solve to have usable electronic cash system. Interestingly enough, cryptography also provides a solution to the 'double spending' problem. We will cover it next.
 
 [1] Double spending is another really important benefit that I'll discuss in a future post.  
 [2] Removing a trusted third-party is important and fascinating for a lot of reason that I won't discuss in this piece. Bear with me: just assume that it is for the better, at least for the sake of this discussion.  
