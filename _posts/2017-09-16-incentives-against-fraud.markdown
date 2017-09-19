@@ -29,3 +29,6 @@ The most innovative systems mix two seemingly orthogonal concepts into a perfect
 As the currency development stablizes and usage increases, the incentives (mining reward and transactions) will self-regulate via supply & demand. The demand being the people wanting get their transactions on the blockchain, and willing to pay certain price (fees) for it. And the supply being the miner wanting to gain the block reward and the fee. The block reward value is slowly decreasing and the proof-of-work is more or less hard to compute depending on the number of people trying to solve it. On the other side, the transaction fee looks more like a pure market. The people transacting who want priority to get on the blockchain will pay a higher fee to get prioritized, and the people that don't pay will be added to the blockchain at a later date.
 
 If we want to think at of our peer-to-peer electronic cash not only as a store of value, but also as a medium of exchange, this means that there is an opportunity to augment the current bitcoin protocol. And this need is not staying unanswered.
+
+Thanks to [Mohit](https://twitter.com/mohitmamoria) for reviewing drafts of this.
+
