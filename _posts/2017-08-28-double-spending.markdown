@@ -36,7 +36,7 @@ Here is a representation of it.
     * transaction 2                     * transaction 6                             * transaction 8
     * transaction 3                     * timestamp: 2017-08-23..                   * transaction 9
     * transaction 4                     * hash of block A                           * timestamp: 2017...
-    * timstamp: 2017-08-23                                                          * hash of block B
+    * timestamp: 2017-08-23                                                         * hash of block B
     * hash of block Z
 ```
 
@@ -55,7 +55,7 @@ As designed above, our blocks are fairly simple to compute right now. We can alm
     * transaction 2                     * transaction 6                             * transaction 8
     * transaction 3                     * timestamp: 2017-08-23..                   * transaction 9
     * transaction 4                     * hash of block A                           * timestamp: 2017...
-    * timstamp: 2017-08-23              * proof-of-work                             * hash of block B
+    * timestamp: 2017-08-23             * proof-of-work                             * hash of block B
     * hash of block Z                                                               * proof-of-work
     * proof-of-work
 ```
