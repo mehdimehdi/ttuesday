@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>Cryptographic gimmick as a proof of work</title>
+  <meta name="description" content="The blockchain is the information architecture to store a ledger for peer-to-peer cash. The proof-of-work is the process that assures that the ledger is acut...">
+
+  <link rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="http://localhost:4000/2017/09/27/proof-of-work.html">
+  <link rel="alternate" type="application/rss+xml" title="Notes about crypto" href="/feed.xml">
+  
+  
+</head>
+
+
+  <body>
+
+    <header class="site-header" role="banner">
+
+  <div class="wrapper">
+    
+    
+    <a class="site-title" href="/">Notes about crypto</a>
+  
+    
+      <nav class="site-nav">
+        <input type="checkbox" id="nav-trigger" class="nav-trigger" />
+        <label for="nav-trigger">
+          <span class="menu-icon">
+            <svg viewBox="0 0 18 15" width="18px" height="15px">
+              <path fill="#424242" d="M18,1.484c0,0.82-0.665,1.484-1.484,1.484H1.484C0.665,2.969,0,2.304,0,1.484l0,0C0,0.665,0.665,0,1.484,0 h15.031C17.335,0,18,0.665,18,1.484L18,1.484z"/>
+              <path fill="#424242" d="M18,7.516C18,8.335,17.335,9,16.516,9H1.484C0.665,9,0,8.335,0,7.516l0,0c0-0.82,0.665-1.484,1.484-1.484 h15.031C17.335,6.031,18,6.696,18,7.516L18,7.516z"/>
+              <path fill="#424242" d="M18,13.516C18,14.335,17.335,15,16.516,15H1.484C0.665,15,0,14.335,0,13.516l0,0 c0-0.82,0.665-1.484,1.484-1.484h15.031C17.335,12.031,18,12.696,18,13.516L18,13.516z"/>
+            </svg>
+          </span>
+        </label>
+
+        <div class="trigger">
+          
+            
+            
+          
+            
+            
+            <a class="page-link" href="/about/">About</a>
+            
+          
+            
+            
+          
+            
+            
+          
+            
+            
+          
+        </div>
+      </nav>
+    
+  </div>
+</header>
+
+
+    <main class="page-content" aria-label="Content">
+      <div class="wrapper">
+        <article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+
+  <header class="post-header">
+    <h1 class="post-title" itemprop="name headline">Cryptographic gimmick as a proof of work</h1>
+    <p class="post-meta">
+      <time datetime="2017-09-27T01:05:41-07:00" itemprop="datePublished">
+        
+        Sep 27, 2017
+      </time>
+      </p>
+  </header>
+
+  <div class="post-content" itemprop="articleBody">
+    <p>The blockchain is the information architecture to store a ledger for peer-to-peer cash. The proof-of-work is the process that assures that the ledger is acutally valid. The idea was borrowed from Adam’s Back Hashback. A proof that a really hard computational work was performed is added to the block in the blockchain, hence ‘proof-of-work’. The goal is to make it very hard to counterfeit blocks in the blockchain. And another notion that is important is that it’s harder to counterfeit older blocks in the blockchain, because one would have to counterfeit all the blocks linked after the counterfeited block, which requires a lot more work. Computing the proof-of-work costs money (electricity needed to run the computers to come up with the proof-of-work), this is why introducing the right <a href="/2017/09/16/incentives-against-fraud.html">incentives</a> for doing the proof-of-work (mining) becomes important.</p>
+
+<p><strong>What is actually the hard problem that constitutes “proof-of-work”?</strong></p>
+
+<p>Let’s start with defining what is a cryptographic hash function. It’s a function (a small program that computer understand) that can take a message in (input) and generates a sequence of bits out (output).</p>
+
+<p>Here are the important properties for a cryptographic hash function:</p>
+<ol>
+  <li>The output has a fixed length, not matter the input.</li>
+  <li>The content of the ouput will completely change even if the input change just a tiny bit.</li>
+  <li>The content of the output looks completely random compare to input, and figuring out the input based on the output is pretty much infeasible. Here is a good video that describes how <a href="https://www.youtube.com/watch?v=S9JGmA5_unY">infeasible that is</a>.</li>
+</ol>
+
+<p><code class="highlighter-rouge">sha256</code> is a classic crypographic hash function that will be used for our ‘proof-of-work’. Here is how it works:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>sha256('hi')='8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4'
+sha256('h1')='33112ee14ee469c3eb52fe90322ec81dd404a0093d565a6d71ce77cbc8124e3b'
+</code></pre>
+</div>
+
+<p>Completely different results for very similar input. Thanks to the 3rd property above, if we are given the output of that function, and wanted to come up with the message that was the input, there is no better way than trying every possible guess of the function, and scan each of the response to see if it matches output expected.</p>
+
+<p>For example if the goal was to find what input generated the hash <code class="highlighter-rouge">8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4</code>.</p>
+
+<p>Then we would have to try:</p>
+<div class="highlighter-rouge"><pre class="highlight"><code>sha256('0')='5feceb66ffc86f38d952786c6d696c79c2dbc239dd4e91b46729d73a27fb57e9'
+sha256('1')='6b86b273ff34fce19d6b804eff5a3f5747ada4eaa22f1d49c01e52ddb7875b4b'
+sha256('2')='d4735e3a265e16eee03f59718b9b5d03019c07d8b6c51f90da3a666eec13ab35'
+...
+sha256('a')='ca978112ca1bbdcafac231b39a23dc4da786eff8147c4e72b9807785afee48bb'
+sha256('b')='3e23e8160039594a33894f6564e1b1348bbd7a0088d42c4acb73eeaed59c009d'
+...
+sha256('aa')='961b6dd3ede3cb8ecbaacbd68de040cd78eb2ed5889130cceb4c49268ea4d506'
+sha256('hh')='72b289ec78e0a928c565480a435453e30acb92eddb3b78ff168b28737cf6a849'
+sha256('hi')='8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4'
+#BINGO!
+</code></pre>
+</div>
+
+<p>That simple fact that you have to scan through many different options in order to find your solution is turned into a gimmick to create the proof-of-work.</p>
+
+<p><strong>How are cryptographic hash functions used to build the proof-of-work?</strong></p>
+
+<p>Let’s take our block example from our <a href="/2017/08/28/double-spending.html">blockchain post</a>:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>--&gt; hash of block A  -----------------&gt; hash of block B  -------------------------&gt; hash of block C
+    * transaction 1                     * transaction 5                             * transaction 7
+    * transaction 2                     * transaction 6                             * transaction 8
+    * transaction 3                     * timestamp: 2017-08-23..                   * transaction 9
+    * transaction 4                     * hash of block A                           * timestamp: 2017...
+    * timestamp: 2017-08-23             * proof-of-work                             * hash of block B
+    * hash of block Z                                                               * proof-of-work
+    * proof-of-work
+</code></pre>
+</div>
+
+<p>What we blindly called <em>‘proof-of-work’</em> in each of the blocks (A, B and C) is actually a magic set of characters. What makes it magic is that when <code class="highlighter-rouge">sha256</code> (our cryptographic hash function) is applied to the block data (list of transactions, timestamp, hash of previous block, and that magic set of character). The output (hash) actually starts with a predefined set of 0.</p>
+
+<p>As we have described before, the only way to come up with that magic set of characters is to try a lot of options. And hoping that after a while you will land on an set of characters that will generate a hash that starts with the set of 0.</p>
+
+<p>This is how a miner actually claims they have mined the block. They tried many set of characters until they found one that meets the requirement. It’s really easy for anyone to confirm that it is the right set of character: the just need run the sha256 function on the block information with that number, and they will instantly find the output to be starting with the predefined set of 0s. If not, the claim from that miner will be discarded.</p>
+
+<p><strong>How hard is it to find that magic set of characters?</strong></p>
+
+<p>Let’s pick that the predefined number of zero is 20. The the result of the <code class="highlighter-rouge">sha256</code> function needs to start with 20 zeros. The probably of finding the magic set of character is 1/(2^20) about 1 in a million. That means that on average someone will need to try one million set of characters before they find the magic set of characters.</p>
+
+<p>If the number of zeros is increased to 30, that number is one billion.</p>
+
+<p>As you can already imagine, that predefined number of zero is configurable, and is adjusted to make the problem harder or simpler depending on how fast miners actually come up with the solution. The goal being to match one block mined every ten minutes.</p>
+
+<p>This is our proof-of-work. It makes clever use of cryptography to secure our blockchain and protect against double spending. It’s very clever and at the same time uses an incredible amount of energy with the only purpose of securing our ledgers without the need for a trusted third party. Some say it’s a waste of energy, others think that there might be more “useful” ways to create a proof-of-work that might be actually more useful to its users.</p>
+
+  </div>
+
+  
+</article>
+
+      </div>
+    </main>
+
+    <footer class="site-footer">
+
+  <div class="wrapper">
+
+    <h2 class="footer-heading">Notes about crypto</h2>
+
+    <div class="footer-col-wrapper">
+      <div class="footer-col footer-col-1">
+        <ul class="contact-list">
+          <li>
+            
+              Notes about crypto
+            
+            </li>
+            
+            <li><a href="mailto:mehdi.aitoufkir@gmail.com">mehdi.aitoufkir@gmail.com</a></li>
+            
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-2">
+        <ul class="social-media-list">
+          
+
+          
+        </ul>
+      </div>
+
+      <div class="footer-col footer-col-3">
+        <p>Mehdi Ait Oufkir discussing cryptocurrency, cryptoasset and Bitcoin for his own good.
+</p>
+      </div>
+    </div>
+
+  </div>
+
+</footer>
+
+
+  </body>
+
+</html>
