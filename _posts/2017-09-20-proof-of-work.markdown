@@ -4,18 +4,18 @@ title:  "Cryptographic gimmick as a proof of work"
 date:   2017-09-27 01:05:41 -0700
 ---
 
-The blockchain is the information architecture to store a ledger for peer-to-peer cash. The proof-of-work is the process that assures that the ledger is acutally valid. The idea was borrowed from Adam's Back Hashback. A proof that a really hard computational work was performed is added to the block in the blockchain, hence 'proof-of-work'. The goal is to make it very hard to counterfeit blocks in the blockchain. And another notion that is important is that it's harder to counterfeit older blocks in the blockchain, because one would have to counterfeit all the blocks linked after the counterfeited block, which requires a lot more work. Computing the proof-of-work costs money (electricity needed to run the computers to come up with the proof-of-work), this is why introducing the right [incentives](/2017/09/16/incentives-against-fraud.html) for doing the proof-of-work (mining) becomes important.
+The blockchain is the information architecture to store a ledger for peer-to-peer cash. The proof-of-work is the process that assures that the ledger is acutally valid. The idea was borrowed from [Adam's Back Hashback](http://www.hashcash.org/papers/hashcash.pdf) [PDF]. Proof that a really hard computational work was performed is added to the block in the blockchain, hence 'proof-of-work'. The goal is to make it very hard to counterfeit blocks in the blockchain. Moreover, it's harder to counterfeit older blocks in the blockchain, because one would have to counterfeit all the blocks linked after the counterfeited block, which requires a lot more work. Computing the proof-of-work costs money (electricity needed to run the computers to come up with the proof-of-work), this is why introducing the right [incentives](/2017/09/16/incentives-against-fraud.html) for doing the proof-of-work (mining) becomes important.
 
 **What is actually the hard problem that constitutes "proof-of-work"?**
 
-Let's start with defining what is a cryptographic hash function. It's a function (a small program that computer understand) that can take a message in (input) and generates a sequence of bits out (output). 
+Let's start with defining what is a cryptographic hash function. It's a function (a small program that computers understand) which can take a message in (input) and generates a sequence of bits out (output or hash). 
 
-Here are the important properties for a cryptographic hash function:
- 1. The output has a fixed length, not matter the input.
- 2. The content of the ouput will completely change even if the input change just a tiny bit.
- 3. The content of the output looks completely random compare to input, and figuring out the input based on the output is pretty much infeasible. Here is a good video that describes how [infeasible that is](https://www.youtube.com/watch?v=S9JGmA5_unY).
+The important properties of a cryptographic hash function are:
+ 1. The output has a fixed length, no matter the input.
+ 2. The content of the ouput will completely change even if the input changes just a tiny bit.
+ 3. The content of the output looks completely random compare to the input, and discovering the input based on the output is pretty much [infeasible](http://www.hashcash.org/papers/hashcash.pdf).
 
-`sha256` is a classic crypographic hash function that will be used for our 'proof-of-work'. Here is how it works:
+`sha256` is a classic crypographic hash function that is used for bitcoin 'proof-of-work'.
 
 ```
 sha256('hi')='8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4'
@@ -23,7 +23,9 @@ sha256('h1')='33112ee14ee469c3eb52fe90322ec81dd404a0093d565a6d71ce77cbc8124e3b'
 ```
 
 
-Completely different results for very similar input. Thanks to the 3rd property above, if we are given the output of that function, and wanted to come up with the message that was the input, there is no better way than trying every possible guess of the function, and scan each of the response to see if it matches output expected. 
+Completely different results for very similar inputs! 
+
+If we were given an output of that function, and wanted to come up with the message that was the input, there would be no better way than guessing an input, verifying if it matches the output expected. If it matches: we got it! if it doesn't match, try to guess a different input. Repeat this until we find it.
 
 For example if the goal was to find what input generated the hash `8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4`. 
 
@@ -42,7 +44,7 @@ sha256('hi')='8f434346648f6b96df89dda901c5176b10a6d83961dd3c1ac88b59b2dc327aa4'
 #BINGO!
 ```
 
-That simple fact that you have to scan through many different options in order to find your solution is turned into a gimmick to create the proof-of-work.
+That simple fact that you have to scan through many different options in order to find your solution is turned into the gimmick to create the proof-of-work.
 
 **How are cryptographic hash functions used to build the proof-of-work?**
 
@@ -60,18 +62,20 @@ Let's take our block example from our [blockchain post](/2017/08/28/double-spend
 ```
 
 
-What we blindly called _'proof-of-work'_ in each of the blocks (A, B and C) is actually a magic set of characters. What makes it magic is that when `sha256` (our cryptographic hash function) is applied to the block data (list of transactions, timestamp, hash of previous block, and that magic set of character). The output (hash) actually starts with a predefined set of 0.
+What we blindly called _'proof-of-work'_ in each of the blocks (A, B and C) are actually magic sets of characters. What makes them magic is that when `sha256` (our cryptographic hash function) is applied to the block data (list of transactions, timestamp, hash of previous block, and that magic set of characters). The output (hash) actually starts with a predefined set of 0.
+
+A miner is tasked to come up with the set of characters where sha256(list of transaction + timestampe + hash of previous block + MAGIC SET OF CHARACTERS) = `00000000000000000001234AB14509..12BC`
 
 As we have described before, the only way to come up with that magic set of characters is to try a lot of options. And hoping that after a while you will land on an set of characters that will generate a hash that starts with the set of 0.
 
-This is how a miner actually claims they have mined the block. They tried many set of characters until they found one that meets the requirement. It's really easy for anyone to confirm that it is the right set of character: the just need run the sha256 function on the block information with that number, and they will instantly find the output to be starting with the predefined set of 0s. If not, the claim from that miner will be discarded.
+This is how a miner actually claims they have mined the block. They tried many set of characters until they found one that meets the requirement. It's really easy for anyone to confirm that it is the right set of character: they just need run the sha256 function on the block information with that number, and they will instantly find the output to be starting with the predefined set of 0s. If not, the claim from that miner will be discarded.
 
 **How hard is it to find that magic set of characters?**
 
-Let's pick that the predefined number of zero is 20. The the result of the `sha256` function needs to start with 20 zeros. The probably of finding the magic set of character is 1/(2^20) about 1 in a million. That means that on average someone will need to try one million set of characters before they find the magic set of characters.
+Let's pick the predefined number of zero as 20. The result of the `sha256` function needs to start with 20 zeros. The probability of finding the magic set of character is 1/(2^20) about 1 in a million. That means that on average someone will need to try one million set of characters before they find the magic set of characters.
 
-If the number of zeros is increased to 30, that number is one billion.
+If the number of zeros is increased to 30, that number is one in a billion.
 
 As you can already imagine, that predefined number of zero is configurable, and is adjusted to make the problem harder or simpler depending on how fast miners actually come up with the solution. The goal being to match one block mined every ten minutes.
 
-This is our proof-of-work. It makes clever use of cryptography to secure our blockchain and protect against double spending. It's very clever and at the same time uses an incredible amount of energy with the only purpose of securing our ledgers without the need for a trusted third party. Some say it's a waste of energy, others think that there might be more "useful" ways to create a proof-of-work that might be actually more useful to its users.
+This is our proof-of-work. It makes tricky use of cryptography to secure our blockchain and protect against double spending. It's very clever and at the same time uses an incredible amount of energy with the only purpose of securing our ledgers without the need for a trusted third party. Some say it's a waste of energy, others think that there might be more "useful" ways to create a proof-of-work that might be actually more useful to its users.
