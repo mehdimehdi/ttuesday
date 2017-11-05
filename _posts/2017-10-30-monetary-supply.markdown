@@ -1,7 +1,7 @@
 ---
 layout: post
 title:  "Bitcoin's monetary supply"
-date:   2017-10-18 01:05:41 -0700
+date:   2017-10-30 01:05:41 -0700
 ---
 
 Inflation and deflation are mechanisms for any currencies to [regulate their economy](https://www.youtube.com/watch?v=PHe0bXAIuk0).
