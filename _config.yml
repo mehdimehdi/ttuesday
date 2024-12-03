@@ -14,7 +14,7 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 title: Notes about crypto
-email: mehdi.aitoufkir@gmail.com
+email: m12r@me.com
 description: > # this means to ignore newlines until "baseurl:"
   Mehdi Ait Oufkir discussing cryptocurrency, cryptoasset and Bitcoin for his own good.
 baseurl: "" # the subpath of your site, e.g. /blog
